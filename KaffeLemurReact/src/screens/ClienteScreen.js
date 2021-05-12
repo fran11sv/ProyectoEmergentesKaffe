@@ -12,7 +12,7 @@ class ClienteScreen extends Component {
     cate:null,
   }
   componentDidMount() {
-    axios.get('http://localhost/ProyectoKaffe/KaffeLemurLaravel/public/api/clientes').then(response => {
+    axios.get('http://localhost/ProyectoEmergentesKaffe/KaffeLemurLaravel/public/api/clientes').then(response => {
       this.setState({
         clientes: response.data
       }, () => { })
@@ -39,7 +39,7 @@ class ClienteScreen extends Component {
         },()=> console.log(this.state) )
         }
         handleDelete = (e) =>{
-          axios.delete('http://localhost/ProyectoKaffe/KaffeLemurLaravel/public/api/clientes/Eliminar/'+e.target.name)
+          axios.delete('http://localhost/ProyectoEmergentesKaffe/KaffeLemurLaravel/public/api/clientes/Eliminar/'+e.target.name)
           .then(res => window.location.reload());
           }
   render() {

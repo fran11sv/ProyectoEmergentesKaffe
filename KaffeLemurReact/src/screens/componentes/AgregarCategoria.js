@@ -28,14 +28,14 @@ export default class AgregarCategoria extends Component {
                 categoria: this.state.categoria,
                 _id: this.props.categoria._id
             }
-            axios.put('http://localhost/ProyectoKaffe/KaffeLemurLaravel/public/api/categorias/Editar', categorias)
+            axios.put('http://localhost/ProyectoEmergentesKaffe/KaffeLemurLaravel/public/api/categorias/Editar', categorias)
             .then(res => window.location.reload());
         }
         else{
             const categorias ={
                 categoria: this.state.categoria
             }
-            axios.post('http://localhost/ProyectoKaffe/KaffeLemurLaravel/public/api/categorias/Crear', categorias)
+            axios.post('http://localhost/ProyectoEmergentesKaffe/KaffeLemurLaravel/public/api/categorias/Crear', categorias)
             .then(res => window.location.reload());
         }
     }

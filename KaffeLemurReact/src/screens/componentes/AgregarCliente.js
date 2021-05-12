@@ -40,7 +40,7 @@ export default class AgregarCliente extends Component {
                 direccion_cli: this.state.direccion_cli,
                 _id: this.props.cliente._id
             }
-            axios.put('http://localhost/ProyectoKaffe/KaffeLemurLaravel/public/api/clientes/Editar', clientes)
+            axios.put('http://localhost/ProyectoEmergentesKaffe/KaffeLemurLaravel/public/api/clientes/Editar', clientes)
             .then(res => window.location.reload());
         }
         else{
@@ -53,7 +53,7 @@ export default class AgregarCliente extends Component {
                 telefono_cli: this.state.telefono_cli,
                 direccion_cli: this.state.direccion_cli,
             }
-            axios.post('http://localhost/ProyectoKaffe/KaffeLemurLaravel/public/api/clientes/Crear', clientes)
+            axios.post('http://localhost/ProyectoEmergentesKaffe/KaffeLemurLaravel/public/api/clientes/Crear', clientes)
             .then(res => window.location.reload());
         }
     }

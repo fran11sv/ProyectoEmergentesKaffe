@@ -14,7 +14,7 @@ class CategoriaScreen extends Component {
     cate:null,
   }
   componentDidMount() {
-    axios.get('http://localhost/ProyectoKaffe/KaffeLemurLaravel/public/api/categorias').then(response => {
+    axios.get('http://localhost/ProyectoEmergentesKaffe/KaffeLemurLaravel/public/api/categorias').then(response => {
       this.setState({
         categorias: response.data
       }, () => { })
@@ -41,7 +41,7 @@ class CategoriaScreen extends Component {
         },()=> console.log(this.state) )
         }
         handleDelete = (e) =>{
-          axios.delete('http://localhost/ProyectoKaffe/KaffeLemurLaravel/public/api/categorias/Eliminar/'+e.target.name)
+          axios.delete('http://localhost/ProyectoEmergentesKaffe/KaffeLemurLaravel/public/api/categorias/Eliminar/'+e.target.name)
           .then(res => window.location.reload());
           }
   render() {
