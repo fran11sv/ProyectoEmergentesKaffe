@@ -1,27 +1,75 @@
 
-/*NAVBAR*/
+/*MAINNAVBAR*/
 .Navbar{
     background-color: #121214  !important;
     
 }
 .NavbarText{
-    color: #29D9D5 !important;
+    color: #DFD8CB !important;
 
 }
 .navOP2{
     float: right;
+    margin: 0 20px;
 }
 
-/*CUERPO PAGINA*/
-body{
-    background-color: #29D9D5 !important;
+
+/*WELCOME*/
+.TituloMenu{
+    text-align:center; 
+    color:#121214;
 }
 
-/*SLIDER*/
+hr{
+    background-color:#121214; 
+    height: 1px; 
+    border: 0;
+}
+
+/*slider*/
 .imgSlide{
     height: 425px;
 }
 
+/*cards*/
+.container {
+    left: 50px;
+    right: 80px;
+}
+.card {
+    background-color: #121214 ;
+    color: #F5F3EA ;
+}
+
+.cardsHome {
+    /*background-color: #FF8903;*/
+    /*background: #fff;*/
+    border: 1px solid #ddd;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    margin: 15px 15px;
+    overflow: hidden;
+    display:inline-block;
+    width: 325px;
+    
+}
+
+ /*efecto al pasar con el raton*/
+ .cardsHome:hover {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+
+/*COMPONENTES COMPARTIDOS*/
+body{
+    background-color: #DFD8CB !important;
+}
 /* TABLAS*/
 table {
     border-collapse: collapse;
@@ -40,5 +88,11 @@ tbody {
 }
 tr:hover {
     background-color: #DDD !important;
+    color: black;
+}
+
+/*BOTONES*/
+.btns{
+    background-color: #29D9D5  !important;
     color: black;
 }
