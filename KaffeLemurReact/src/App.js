@@ -7,6 +7,7 @@ import AgregarCategoria from "./screens/componentes/AgregarCategoria"
 import AgregarCliente from "./screens/componentes/AgregarCliente"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MainNavbar from "./screens/componentes/MainNavbar";
+import "./assets/css/styles.css"
 
 const App = () => {
   return (

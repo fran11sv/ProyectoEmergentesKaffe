@@ -1,0 +1,44 @@
+
+/*NAVBAR*/
+.Navbar{
+    background-color: #121214  !important;
+    
+}
+.NavbarText{
+    color: #29D9D5 !important;
+
+}
+.navOP2{
+    float: right;
+}
+
+/*CUERPO PAGINA*/
+body{
+    background-color: #29D9D5 !important;
+}
+
+/*SLIDER*/
+.imgSlide{
+    height: 425px;
+}
+
+/* TABLAS*/
+table {
+    border-collapse: collapse;
+}
+th, td {
+    padding: 10px;
+}
+thead {
+    background-color: #DDD;
+    border-bottom: solid 5px #c0392b !important;
+    color: black;
+}
+tbody {
+    background-color: #343a40 !important;
+    color: white;
+}
+tr:hover {
+    background-color: #DDD !important;
+    color: black;
+}

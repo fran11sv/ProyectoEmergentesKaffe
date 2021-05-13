@@ -1,7 +1,7 @@
 import axios from 'axios'
-import { Button, Modal, ButtonGroup} from 'react-bootstrap'
+import { Button, Modal, ButtonGroup } from 'react-bootstrap'
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+//import { Link } from 'react-router-dom'
 import AgregarCliente from "./componentes/AgregarCliente"
 
 class ClienteScreen extends Component {
@@ -9,8 +9,9 @@ class ClienteScreen extends Component {
     clientes: [],
     Haydatos: "",
     show: false,
-    cate:null,
+    cate: null,
   }
+
   componentDidMount() {
     axios.get('http://localhost/ProyectoEmergentesKaffe/KaffeLemurLaravel/public/api/clientes').then(response => {
       this.setState({
@@ -20,28 +21,33 @@ class ClienteScreen extends Component {
       console.log(err)
     })
   }
-  handleShow = () =>{
+
+  handleShow = () => {
     this.setState({
-        show: true
+      show: true
     })
-    }
-    handleCancel= () =>{
-      this.setState({
-          cate: null,
-          show: false
-      })
-      
-      }
-      handleEdit = (e) =>{
-        this.setState({
-            show: true,
-            cate: JSON.parse(e.target.name)
-        },()=> console.log(this.state) )
-        }
-        handleDelete = (e) =>{
-          axios.delete('http://localhost/ProyectoEmergentesKaffe/KaffeLemurLaravel/public/api/clientes/Eliminar/'+e.target.name)
-          .then(res => window.location.reload());
-          }
+  }
+
+  handleCancel = () => {
+    this.setState({
+      cate: null,
+      show: false
+    })
+
+  }
+
+  handleEdit = (e) => {
+    this.setState({
+      show: true,
+      cate: JSON.parse(e.target.name)
+    }, () => console.log(this.state))
+  }
+
+  handleDelete = (e) => {
+    axios.delete('http://localhost/ProyectoEmergentesKaffe/KaffeLemurLaravel/public/api/clientes/Eliminar/' + e.target.name)
+      .then(res => window.location.reload());
+  }
+  
   render() {
     const { clientes } = this.state
     return (
@@ -82,14 +88,14 @@ class ClienteScreen extends Component {
                           <td>{c.telefono_cli}</td>
                           <td>{c.direccion_cli}</td>
                           <td>
-                          <ButtonGroup aria-label="Basic example">
-                          <Button variant="warning" name={JSON.stringify(c)} onClick={this.handleEdit}>
-                          Editar
+                            <ButtonGroup aria-label="Basic example">
+                              <Button variant="warning" name={JSON.stringify(c)} onClick={this.handleEdit}>
+                                Editar
                         </Button>
-                        <Button variant="danger" name={c._id} onClick={this.handleDelete}>
-                          Eliminar
+                              <Button variant="danger" name={c._id} onClick={this.handleDelete}>
+                                Eliminar
                         </Button>
-                        </ButtonGroup>
+                            </ButtonGroup>
                           </td>
                         </tr>
                       )}
@@ -105,7 +111,7 @@ class ClienteScreen extends Component {
             <Modal.Title>Modal heading</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <AgregarCliente cliente={this.state.cate}/>
+            <AgregarCliente cliente={this.state.cate} />
           </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={this.handleCancel}>

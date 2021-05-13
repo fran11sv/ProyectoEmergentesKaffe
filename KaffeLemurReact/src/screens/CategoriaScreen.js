@@ -3,7 +3,7 @@
 import axios from 'axios'
 import { Button, Modal, ButtonGroup} from 'react-bootstrap'
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+//import { Link } from 'react-router-dom'
 import AgregarCategoria from "./componentes/AgregarCategoria"
 
 class CategoriaScreen extends Component {
@@ -63,7 +63,7 @@ class CategoriaScreen extends Component {
                       <tr data-bs-toggle="modal" data-bs-target="#Editar">
                         <th>#</th>
                         <th>Categorias</th>
-                        <th></th>
+                        <th>Acciones</th>
                       </tr>
                     </thead>
                     <tbody>
