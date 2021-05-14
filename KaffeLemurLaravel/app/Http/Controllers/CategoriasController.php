@@ -7,16 +7,97 @@ use Illuminate\Http\Request;
 
 class CategoriasController extends Controller
 {
-/**
+    /**
      * Errors:
      * 404: No encontro nombre
      */
+
+    public function index()
+    {
+        //
+        $data['categorias']=Categorias::paginate(15);
+        return view('categorias.index', $data);
+        /*$productos = Productos::all();
+        return view('productos.index', $productos);*/
+
+    }
+
+/**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+        return view('categorias.create');
+    }
+
+/**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        //
+        $datosCats = $request->except('_token','saveitem');
+        Categorias::insert($datosCats);
+        //return response()->json($dataProducts);
+        return redirect('categorias/');
+    }
+
+
+/**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Categorias  $categorias
+     * @return \Illuminate\Http\Response
+     */
+
+    public function edit($id) {
+        $categorias = Categorias::findOrFail($id);
+        return view('categorias.edit', compact('categorias'));
+     }
+
+/**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\Categorias  $categorias
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        $categorias = Categorias::findOrFail($id);
+        $categorias->update($request->all());
+        return redirect('categorias');
+
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Categorias $categorias
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
+        Categorias::destroy($id);
+        return redirect('categorias');
+    }
+//-------------------------------------------FRONTEND------------------------------------------------------------
+
 
     //GET Obtiene todos los categorias
     public function AllCategorias(){
         $categorias = Categorias::all();
         return json_encode($categorias);
     }
+
+    
 
     //POST Crea nuevo nombre
     public function CrearCategoria(Request $request){
