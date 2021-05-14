@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ClientesController;
 use App\Http\Controllers\CategoriasController;
 
 /*
@@ -24,5 +25,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 //Route::get('categorias', [App\Http\Controllers\CategoriasController::class, 'index'])->name('categorias');
+
+Route::resource('clientes', ClientesController::class);
 Route::resource('categorias', CategoriasController::class);
+
 //Route::put('categorias/create', [App\Http\Controllers\CategoriasController::class, 'create'])->name('create');

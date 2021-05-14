@@ -36,4 +36,14 @@ class HomeController extends Controller
         return view('categorias.index');
     }
 
+     /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function indexcliente()
+    {
+        return view('clientes.index');
+    }
+
 }
