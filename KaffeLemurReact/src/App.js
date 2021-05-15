@@ -8,6 +8,10 @@ import AgregarCliente from "./screens/componentes/AgregarCliente"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MainNavbar from "./screens/componentes/MainNavbar";
 import "./assets/css/styles.css"
+import SignIn from "./screens/componentes/SignIn";
+import SignUp from "./screens/componentes/SignUp";
+import Registrar from "./screens/componentes/Registrar";
+import LogIn from "./screens/componentes/LogIn";
 
 const App = () => {
   return (
@@ -17,6 +21,14 @@ const App = () => {
             <Route path="/" exact component={WelcomeScreen} />
             <Route path="/Clientes" component={ClienteScreen} />
             <Route path="/Categorias" component={CategoriaScreen} />
+            <Route path="/componentes/LogIn" component={LogIn} />
+            <Route path="/componentes/SignIn">
+              <SignIn/>
+            </Route>
+            <Route path="/componentes/SignUp">
+              <SignUp/>
+            </Route>
+            <Route path="/componentes/Registrar" component={Registrar} />
             <Route path="/componentes/AgregarCategoria" component={AgregarCategoria} />
             <Route path="/componentes/AgregarCliente" component={AgregarCliente} />
           </Switch>

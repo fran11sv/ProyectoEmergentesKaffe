@@ -29,6 +29,7 @@ Route::get('clientes',[App\Http\Controllers\ClientesController::class,'AllClient
 Route::post('clientes/Crear',[App\Http\Controllers\ClientesController::class,'CrearCliente']);
 Route::put('clientes/Editar',[App\Http\Controllers\ClientesController::class,'ActualizarCliente']);
 Route::delete('clientes/Eliminar/{id}',[App\Http\Controllers\ClientesController::class,'EliminarCliente']);
+Route::get('clientes/Login',[App\Http\Controllers\ClientesController::class,'Login']);
 
 //PRODUCTOS
 Route::get('productos',[App\Http\Controllers\ProductosController::class,'AllProductos']);

@@ -13,6 +13,16 @@ class ClientesController extends Controller
      * 404: No encontro nombre
      */
 
+    public function Login(Request $request)
+    {
+        $ClienteDatos = Clientes::where(['email_cli', '=', $request->email_cli],['contra_cli', '=', $request->contra_cli],)->first();
+        if ($ClienteDatos!= null){
+            return json_encode($ClienteDatos,200);
+        }else {
+            return response("NO WEY", 404);
+        }   
+    }
+
     //GET Obtiene todos los Clientes
     public function AllClientes(){
         $Clientes = Clientes::all();
