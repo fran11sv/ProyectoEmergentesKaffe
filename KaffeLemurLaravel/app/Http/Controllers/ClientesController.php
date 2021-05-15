@@ -8,6 +8,77 @@ use Illuminate\Http\Request;
 
 class ClientesController extends Controller
 {
+    public function index()
+ {
+ $data['clientes']=Clientes::paginate(15);
+ return view('clientes.index', $data);
+ /*$productos = Productos::all();
+ return view('productos.index', $productos);*/
+ }
+
+ /**
+ * Store a newly created resource in storage.
+ *
+ * @param \Illuminate\Http\Request $request
+ * @return \Illuminate\Http\Response
+ */
+public function store(Request $request)
+{
+//
+$datosCli = $request->except('_token','saveitem');
+Clientes::insert($datosCli);
+//return response()->json($dataProducts);
+return redirect('clientes/');
+}
+/**
+* Show the form for creating a new resource.
+*
+* @return \Illuminate\Http\Response
+*/
+public function create()
+{
+return view('clientes.create');
+}
+
+/**
+ * Show the form for editing the specified resource.
+ *
+ * @param \App\Clientes $clientes
+ * @return \Illuminate\Http\Response
+ */
+public function edit($id) {
+    $clientes = Clientes::findOrFail($id);
+    return view('clientes.edit', compact('clientes'));
+    }
+   /**
+    * Update the specified resource in storage.
+    *
+    * @param \Illuminate\Http\Request $request
+    * @param \App\Models\Clientes $clientes
+    * @return \Illuminate\Http\Response
+    */
+    public function update(Request $request, $id)
+ {
+ $clientes = Clientes::findOrFail($id);
+ $clientes->update($request->all());
+ return redirect('clientes');
+ }
+
+ /**
+ * Remove the specified resource from storage.
+ *
+ * @param \App\Clientes $clientes
+ * @return \Illuminate\Http\Response
+ */
+public function destroy($id)
+{
+//
+Clientes::destroy($id);
+return redirect('clientes');
+}
+
+
+ //----------------------------------------From end--------------------------------------------------
     /**
      * Errors:
      * 404: No encontro nombre
@@ -69,5 +140,7 @@ class ClientesController extends Controller
         $ClienteDatos->delete();
         return response("Eliminado", 200);
     }
+
+    
 
 }
