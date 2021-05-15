@@ -156,7 +156,11 @@ final class Versions
   'sebastian/type' => '2.3.1@81cd61ab7bbf2de744aba0ea61fae32f721df3d2',
   'sebastian/version' => '3.0.2@c6c1022351a901512170118436c764e473f6de8c',
   'theseer/tokenizer' => '1.2.0@75a63c33a8577608444246075ea0af0d052e452a',
+<<<<<<< Updated upstream
   'laravel/laravel' => 'dev-master@2e9da0ff3882fa3f8899a3704730049d3a72e524',
+=======
+  'laravel/laravel' => 'dev-master@33af911c73cc263dcdfc554731b964018feb2daf',
+>>>>>>> Stashed changes
 );
 
     private function __construct()

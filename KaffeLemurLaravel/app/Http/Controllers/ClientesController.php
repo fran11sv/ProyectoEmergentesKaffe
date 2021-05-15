@@ -86,7 +86,8 @@ return redirect('clientes');
 
     public function Login(Request $request)
     {
-        $ClienteDatos = Clientes::where(['email_cli', '=', $request->email_cli],['contra_cli', '=', $request->contra_cli],)->first();
+        $ClienteDatos = Clientes::select('*')->where('email_cli', '=', $request->email_cli)->where('contra_cli', '=', $request->contra_cli)->get();;
+        //$ClienteDatos = Clientes::where('email_cli', '=', $request->email_cli)where('contra_cli', '=', $request->contra_cli)->get();
         if ($ClienteDatos!= null){
             return json_encode($ClienteDatos,200);
         }else {

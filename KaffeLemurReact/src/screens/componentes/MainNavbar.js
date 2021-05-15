@@ -16,8 +16,6 @@ const MainNavbar = () => {
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto">
                     <Nav.Link><Link to="/" className="nav-link active NavbarText">Inicio</Link></Nav.Link>
-                    <Nav.Link><Link to="/Categorias" className="nav-link NavbarText">Categorias</Link></Nav.Link>
-                    <Nav.Link><Link to="/Clientes" className="nav-link NavbarText">Clientes</Link></Nav.Link>
                 </Nav>
             </Navbar.Collapse>
             <Dropdown className="navOP2">

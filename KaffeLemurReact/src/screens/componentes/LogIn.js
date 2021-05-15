@@ -10,6 +10,7 @@ export default class LogIn extends Component {
         this.state = {
             email_cli: '',
             contra_cli: '',
+
         }
     }
 
@@ -22,10 +23,16 @@ export default class LogIn extends Component {
         e.preventDefault();
         const clientes = {
             email_cli: this.state.email_cli,
-            contra_cli: this.state.contra_cli,
+            contra_cli: this.state.contra_cli
         }
         axios.get('http://localhost/ProyectoEmergentesKaffe/KaffeLemurLaravel/public/api/clientes/Login', clientes)
-            .then(res => window.location.reload());
+            .then(response => {
+                this.setState({
+                  clientes: response.data
+                }, () => console.log(this.state))
+              }).catch(err => {
+                console.log(err)
+              })
     }
     render() {
         return (

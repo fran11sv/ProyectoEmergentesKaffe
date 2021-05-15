@@ -6,7 +6,11 @@
     'aliases' => 
     array (
     ),
+<<<<<<< Updated upstream
     'reference' => '2e9da0ff3882fa3f8899a3704730049d3a72e524',
+=======
+    'reference' => '33af911c73cc263dcdfc554731b964018feb2daf',
+>>>>>>> Stashed changes
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -481,7 +485,11 @@
       'aliases' => 
       array (
       ),
+<<<<<<< Updated upstream
       'reference' => '2e9da0ff3882fa3f8899a3704730049d3a72e524',
+=======
+      'reference' => '33af911c73cc263dcdfc554731b964018feb2daf',
+>>>>>>> Stashed changes
     ),
     'laravel/passport' => 
     array (
