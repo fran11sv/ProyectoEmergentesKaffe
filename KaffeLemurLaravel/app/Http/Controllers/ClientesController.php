@@ -10,7 +10,6 @@ class ClientesController extends Controller
 {
     public function index()
  {
- // añadi esto 
  $data['clientes']=Clientes::paginate(15);
  return view('clientes.index', $data);
  /*$productos = Productos::all();
