@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClientesController;
 use App\Http\Controllers\CategoriasController;
 use App\Http\Controllers\ProductosController;
+use App\Http\Controllers\IngredientesController;
 
 
 /*
@@ -25,6 +26,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::resource('ingredientes', IngredientesController::class);
 Route::resource('productos', ProductosController::class);
 Route::resource('clientes', ClientesController::class);
 Route::resource('categorias', CategoriasController::class);

@@ -57,4 +57,14 @@ class HomeController extends Controller
         return view('productos.index');
     }
 
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function indexingre()
+    {
+        return view('ingredientes.index');
+    }
+
 }
