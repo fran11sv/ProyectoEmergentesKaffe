@@ -5,6 +5,9 @@ use App\Http\Controllers\ClientesController;
 use App\Http\Controllers\CategoriasController;
 use App\Http\Controllers\ProductosController;
 use App\Http\Controllers\IngredientesController;
+use App\Http\Controllers\IngresProdsController;
+
+
 
 
 /*
@@ -26,6 +29,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::resource('ingresprods', IngresProdsController::class);
 Route::resource('ingredientes', IngredientesController::class);
 Route::resource('productos', ProductosController::class);
 Route::resource('clientes', ClientesController::class);
