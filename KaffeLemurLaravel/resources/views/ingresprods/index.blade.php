@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="table-responsive-md">
         <div class="card">
-                <div class="card-header">{{ __('Ingres_Prods') }}</div>
+                <div class="card-header">{{ __('Ingredientes del Producto') }}</div>
                     <div class="row justify-content-start">
                         <div class="col-md-auto"><a class="btn btn-primary" href="{{route('ingresprods.create')}}">Agregar Ingrediente al Producto </a>
                         </div>
@@ -15,8 +15,8 @@
                         <thead class="thead-dark">
                             <tr>
                             <th scope="col">Item</th>
-                            <th scope="col">id_producto</th>
-                            <th scope="col">id_ingrediente</th>
+                            <th scope="col">Producto</th>
+                            <th scope="col">Ingrediente</th>
                             <th scope="col">Acciones</th>
                             </tr>
                         </thead>
@@ -25,8 +25,8 @@
                         @foreach($ingresprods as $ingresprod)
                             <tr>
                             <th scope="row">{{$countrow++}}</th>
-                            <td>{{ $ingresprod->id_producto }}</td>
-                            <td>{{ $ingresprod->id_ingrediente }}</td>
+                            <td>{{ $ingresprod->obtener_producto->nombre_prod  }}</td>
+                            <td>{{ $ingresprod->obtener_ingrediente->nombre_ingre }}</td>
                             <td class="d-flex">
                                 <a class="btn btn-success btn-sm mx-1" href="{{ url('/ingresprods/'.$ingresprod->id.'/edit') }}">Editar</a>
 

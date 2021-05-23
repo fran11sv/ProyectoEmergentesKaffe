@@ -65,7 +65,7 @@
 	                            <a class="nav-link" href="{{ route('ingredientes.index') }}">{{ __('Ingredientes') }}</a>
                             </li>
                             <li class="nav-item">
-	                            <a class="nav-link" href="{{ route('ingresprods.index') }}">{{ __('Ingres_Prods') }}</a>
+	                            <a class="nav-link" href="{{ route('ingresprods.index') }}">{{ __('Ingredientes del Producto') }}</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

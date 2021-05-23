@@ -18,5 +18,15 @@ class IngresProds extends Model
   
       //Nombres de columnas
       protected $fillable = ['id_producto', 'id_ingrediente'];
+
+      public function obtener_producto()
+      {
+        return $this->hasOne(Productos::class, '_id', 'id_producto');
+      }
+
+      public function obtener_ingrediente()
+      {
+        return $this->hasOne(Ingredientes::class, '_id', 'id_ingrediente');
+      }
   
 }
