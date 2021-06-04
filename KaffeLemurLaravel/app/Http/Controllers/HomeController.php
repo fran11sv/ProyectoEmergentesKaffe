@@ -76,6 +76,16 @@ class HomeController extends Controller
  {
  return view('ingresprods.index');
  }
+ /**
+ * Show the application dashboard.
+ *
+ * @return \Illuminate\Contracts\Support\Renderable
+ */
+public function indexrev()
+{
+return view('reservas.index');
+}
+
 
 
 }
