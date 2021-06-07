@@ -17,6 +17,7 @@
                                     <th scope="col">Item</th>
                                     <th scope="col">Cliente</th>
                                     <th scope="col">Fecha de reserva</th>
+                                    <th scope="col">Concepto</th>
                                     <th scope="col">Total</th>
                                     <th scope="col">Acciones</th>
                                 </tr>
@@ -28,16 +29,17 @@
                                             <th scope="row">{{ $countrow++ }}</th>
                                             <td>{{ $reserva->obtener_cliente->nombre_cli  }} {{ $reserva->obtener_cliente->apellido_cli  }}</td>
                                             <td>{{ $reserva->fecha_reserva }}</td>
+                                            <td>{{ $reserva->concepto }}</td>
                                             <td>{{ $reserva->total_reserva }}</td>
                                             <td class="d-flex">
+                                                <!--<a class="btn btn-secondary btn-sm mx-1"
+                                                    href="{{ url('/reservas/' . $reserva->id . '/edit') }}">Añadir Productos</a>-->
                                                 <a class="btn btn-success btn-sm mx-1"
                                                     href="{{ url('/reservas/' . $reserva->id . '/edit') }}">Editar</a>
                                                 <form action="{{ url('reservas/' . $reserva->id) }}" method="post">
                                                     @csrf
                                                     {{ method_field('DELETE') }}
-                                                    <input class="btn btn-danger btn-sm mx-1" type="submit"
-                                                        onclick="return confirm('¿Desea Eliminar este cliente?')"
-                                                        value="Eliminar"></input>
+                                                    <input class="btn btn-danger btn-sm mx-1" type="submit" onclick="return confirm('¿Desea Eliminar este cliente?')" value="Eliminar">
                                                 </form>
                                             </td>
                                         </tr>

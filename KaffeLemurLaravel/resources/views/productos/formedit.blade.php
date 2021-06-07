@@ -6,7 +6,11 @@
             <br />
             <select class="form-select" name="id_categoria" aria-label="Default select example">
                 @foreach ($categorias as $categoria)
-                    <option value="{{ $categoria['_id'] }}" selected>{{ $categoria['nombre_cat'] }}</option>
+                    @if ($categoria['_id'] == $productos->id_categoria)
+                        <option value="{{ $categoria['_id'] }}" selected>{{ $categoria['nombre_cat'] }}</option>
+                    @else
+                        <option value="{{ $categoria['_id'] }}">{{ $categoria['nombre_cat'] }}</option>
+                    @endif
                 @endforeach
 
             </select>
@@ -26,7 +30,7 @@
         <div class="form-group col">
             <label class="col-form-label col-form-label-sm" for="descripcion_prod">Descripcion</label>
             <input type="text" name="descripcion_prod" value="{{ $productos->descripcion_prod }}"
-                class="form-control form-control-sm col-sm-4" id="descripcion_prod" >
+                class="form-control form-control-sm col-sm-4" id="descripcion_prod">
         </div>
     </div>
 

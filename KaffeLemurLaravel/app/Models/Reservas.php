@@ -18,7 +18,7 @@ class Reservas extends Model
      public $timestamps = false;
  
      //Nombres de columnas
-     protected $fillable = ['id_cli', 'fecha_reserva', 'total_reserva'];
+     protected $fillable = ['id_cli', 'fecha_reserva', 'total_reserva', 'concepto'];
  
      public function obtener_cliente()
      {
